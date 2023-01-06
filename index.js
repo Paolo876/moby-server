@@ -10,5 +10,11 @@ const sequelize = require("./config/database");
 
 const PORT = process.env.port || 3001;
 
+
+//routes
+app.get("/", (req,res) => res.send("APP IS ONLINE..."))
+app.use("/auth", require("./routes/Users"));
+
+
 app.listen(PORT, () => console.log("LISTENING TO PORT", PORT))
 

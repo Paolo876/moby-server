@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('dbTutorialPt', 'root', process.env.LOCALHOST_PASSWORD, {
+const sequelize = new Sequelize('moby-local', 'root', process.env.LOCALHOST_PASSWORD, {
     host: "localhost",
     dialect: "mysql",
     logging: false,
