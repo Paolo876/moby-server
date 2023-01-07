@@ -5,6 +5,7 @@ const Users = require("../models/Users");
 
 router.get("/", async (req,res) => {
     const users = await Users.findAll()
+    res.json(users)
 })
 
 module.exports = router;

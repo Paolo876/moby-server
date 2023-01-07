@@ -11,7 +11,6 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 //     dialect: "mysql",
 //     logging: false,
 // });
-console.log(process.env.port)
 const testDBConnection = async () => {
     try {
         await sequelize.authenticate();
