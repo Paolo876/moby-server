@@ -1,12 +1,17 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(process.env.port ? process.env.DB_NAME : "moby-local", process.env.port ? process.env.DB_USER : "root", process.env.port ? process.env.DB_PASSWORD : process.env.LOCALHOST_PASSWORD, { 
-    host: process.env.port ? process.env.DB_HOST : "localhost", 
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, { 
+    host: process.env.DB_HOST, 
     dialect: "mysql", 
     logging: false, 
     port: process.env.DB_PORT 
 });
-
+// const sequelize = new Sequelize('moby-local', 'root', process.env.LOCALHOST_PASSWORD, {
+//     host: "localhost",
+//     dialect: "mysql",
+//     logging: false,
+// });
+console.log(process.env.port)
 const testDBConnection = async () => {
     try {
         await sequelize.authenticate();
